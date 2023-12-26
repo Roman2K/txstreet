@@ -27,6 +27,14 @@ The frontend is built with Vue, Bulma and Phaser 3. It connects to TxStreet back
 -   Run the command `yarn run build`
 -   For a live dev server run the command `yarn run serve`
 
+# Running with Docker
+
+-   Copy the contents of `.env.example` to a new file named `.env`
+-   Run `tools/build-dist`. This will:
+    -   Build a Docker image named `txstreet`
+    -   Run it
+    -   Files will be written under `_dist`
+
 ---
 
 # Important Files

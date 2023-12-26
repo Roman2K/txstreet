@@ -1,7 +1,6 @@
 .DS_Store
 node_modules
 **/dist
-package-lock.json
 *.db
 config
 txstreet.min.js
@@ -40,3 +39,6 @@ pnpm-debug.log*
 *.sw?
 **/cryptopunks
 **/moonheads
+
+# asdf (Node.js version manager)
+/.tool-versions
