@@ -1,10 +1,12 @@
 <template>
 	<div ref="landing" id="landing">
 		<div v-if="sidebarActive" id="landing-sidebar">
-			<img
-				class="dash-logo"
-				:src="'/static/img/icons/logo' + (darkMode ? '_darkmode' : '') + '.svg?v=' + $root.appVersion"
-			/>
+			<a href="/">
+				<img
+					class="dash-logo"
+					:src="'/static/img/icons/logo' + (darkMode ? '_darkmode' : '') + '.svg?v=' + $root.appVersion"
+				/>
+			</a>
 			<div class="buttons dash-buttons">
 				<div class="button-container" v-for="(dashConfig, dashKey) in cPages" :key="dashKey">
 					<a
