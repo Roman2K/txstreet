@@ -5,7 +5,6 @@ dist_dir=${1-"_dist"}
 env_path=${2-".env"}
 
 dist_dir_absolute=`pwd`/$dist_dir
-env_path_absolute=`pwd`/$env_path
 
 echo "Writing dist files to: $dist_dir_absolute"
 [[ -d "$dist_dir_absolute" ]] || mkdir -v "$dist_dir_absolute"
@@ -15,13 +14,13 @@ echo "Writing dist files to: $dist_dir_absolute"
   exit 1
 }
 
-[[ -f "$env_path_absolute" ]] || {
+[[ -f "$env_path" ]] || {
   echo ".env file is missing" >&2
   exit 1
 }
 
 docker build -t txstreet .
 docker run --rm \
+  --env-file "$env_path" \
   --mount type=bind,src="$dist_dir_absolute",dst=/home/node/app/dist \
-  --mount type=bind,src="$env_path_absolute",dst=/home/node/app/.env,ro \
   txstreet
