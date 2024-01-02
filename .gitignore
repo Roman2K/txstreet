@@ -1,6 +1,11 @@
-.DS_Store
-node_modules
+/_dist
 **/dist
+
+/node_modules
+
+/.envrc
+/.ripgreprc
+.DS_Store
 *.db
 config
 txstreet.min.js
@@ -42,3 +47,6 @@ pnpm-debug.log*
 
 # asdf (Node.js version manager)
 /.tool-versions
+
+# Vim
+/.nvimrc
