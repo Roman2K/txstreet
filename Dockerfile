@@ -13,4 +13,4 @@ RUN chown -R node:node /home/node/app
 
 USER node
 
-CMD ["yarn", "run", "build", "--no-clean"]
+ENTRYPOINT ["yarn", "run", "build", "--no-clean"]

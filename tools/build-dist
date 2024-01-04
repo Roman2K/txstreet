@@ -19,8 +19,12 @@ echo "Writing dist files to: $dist_dir_absolute"
   exit 1
 }
 
+build_mode=`source "$env_path" && echo ${VUE_APP_MODE?}`
+echo build_mode=$build_mode
+
 docker build -t txstreet .
 docker run --rm \
   --env-file "$env_path" \
   --mount type=bind,src="$dist_dir_absolute",dst=/home/node/app/dist \
-  txstreet
+  txstreet \
+  --mode "$build_mode"
