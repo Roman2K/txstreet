@@ -143,7 +143,10 @@ Bus.prototype.newBus = function (atStop = true) {
 		}
 	}
 
-	this.setData("id", this.scene.blockchain[this.scene.blockchain.length - 1].height + busIndex);
+  const lastBlock = this.scene.blockchain[this.scene.blockchain.length - 1];
+  if (lastBlock) {
+    this.setData("id", lastBlock.height + busIndex);
+  }
 
 	this.busHeight = this.scene.calcBusHeight(this.scene.config.busCapacityVisual || this.scene.config.busCapacity);
 	if (this.busHeight < 1) this.busHeight = 1;
