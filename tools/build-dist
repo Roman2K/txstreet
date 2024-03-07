@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -eo pipefail
+set -euo pipefail
 
 dist_dir=${1-"_dist"}
 env_path=${2-".env"}
