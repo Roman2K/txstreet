@@ -37,6 +37,10 @@ module.exports = {
 		},
 	},
 	configureWebpack: {
+		output: {
+			// See Webpack Caching: https://webpack.js.org/guides/caching/#root
+			filename: "[name].[contenthash].js",
+		},
 		plugins: [
 			new webpack.ContextReplacementPlugin(
 				/date\-fns[\/\\]/,
